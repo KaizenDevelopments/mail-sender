@@ -42,7 +42,7 @@ if ( !function_exists('wp_mail_sender_init') ) {
                 $mail_headers = sprintf('From: %s <%s>', get_bloginfo('name'), $mail_from);
 
                 if ( wp_mail($mail_to, $mail_subject, $mail_message, $mail_headers) ) {
-                    ?><div class="updated"><?php echo __('Test email sent successfuly', 'wp-mail-sender') ?></div><?php
+                    ?><div class="updated"><?php echo __('Test email sent successfully', 'wp-mail-sender') ?></div><?php
                 }
                 else {
                     ?><div class="error"><?php echo __('Error while sending test email', 'wp-mail-sender') ?></div><?php
