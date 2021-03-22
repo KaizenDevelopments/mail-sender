@@ -1,4 +1,4 @@
-=== WP Mail Sender ===
+=== Mail Sender ===
 Contributors: aeyoll
 Tags: mail
 Requires at least: 4.9

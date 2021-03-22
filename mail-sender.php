@@ -1,16 +1,16 @@
 <?php
 /*
- * WP Mail Sender
+ * Mail Sender
  *
- * Plugin Name: WP Mail Sender
+ * Plugin Name: Mail Sender
  * Version:     1.0
- * Plugin URI:  https://wordpress.org/plugins/wp-mail-sender/
+ * Plugin URI:  https://wordpress.org/plugins/mail-sender/
  * Description: Simple plugin to fix the mail sender enveloppe and use the From: address
  * Author:      Kaizen Developments
  * Author URI:  https://www.kaizen-developments.com
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * Text Domain: wp-mail-sender
+ * Text Domain: mail-sender
  * Domain Path: /languages
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
@@ -37,20 +37,20 @@ if ( !function_exists('wp_mail_sender_init') ) {
                     && filter_var($mail_to, FILTER_VALIDATE_EMAIL)
                     && filter_var($mail_from, FILTER_VALIDATE_EMAIL) ) {
 
-                $mail_subject = __('Email delivery test', 'wp-mail-sender');
-                $mail_message = __('This is a delivery test email, check headers if all goes well.', 'wp-mail-sender');
+                $mail_subject = __('Email delivery test', 'mail-sender');
+                $mail_message = __('This is a delivery test email, check headers if all goes well.', 'mail-sender');
                 $mail_headers = sprintf('From: %s <%s>', get_bloginfo('name'), $mail_from);
 
                 if ( wp_mail($mail_to, $mail_subject, $mail_message, $mail_headers) ) {
-                    ?><div class="updated"><?php echo __('Test email sent successfully', 'wp-mail-sender') ?></div><?php
+                    ?><div class="updated"><?php echo __('Test email sent successfully', 'mail-sender') ?></div><?php
                 }
                 else {
-                    ?><div class="error"><?php echo __('Error while sending test email', 'wp-mail-sender') ?></div><?php
+                    ?><div class="error"><?php echo __('Error while sending test email', 'mail-sender') ?></div><?php
                 }
             }
             else {
             ?>
-                <div class="error"><?php echo __('Email address is invalid', 'wp-mail-sender') ?></div>
+                <div class="error"><?php echo __('Email address is invalid', 'mail-sender') ?></div>
             <?php
             }
         }
@@ -63,12 +63,12 @@ if ( !function_exists('wp_mail_sender_init') ) {
         $default_from = sprintf('noreply@%s', str_replace('www.', '', $_SERVER['HTTP_HOST']));
     ?>
         <div class="wrap">
-            <h2><?php echo __('Send a test email', 'wp-mail-sender') ?></h2>
+            <h2><?php echo __('Send a test email', 'mail-sender') ?></h2>
             <form method="POST">
                 <table class="form-table">
                     <tr>
                         <td>
-                            <label for="wp-sender-email-from"><?php echo __('From Email address', 'wp-mail-sender') ?></label>
+                            <label for="wp-sender-email-from"><?php echo __('From Email address', 'mail-sender') ?></label>
                         </td>
                         <td>
                             <input id="wp-sender-email-from" name="email_from" size="60" type="email" value="<?php echo $default_from ?>" />
@@ -76,7 +76,7 @@ if ( !function_exists('wp_mail_sender_init') ) {
                     </tr>
                     <tr>
                         <td>
-                            <label for="wp-sender-email-to"><?php echo __('To Email address', 'wp-mail-sender') ?></label>
+                            <label for="wp-sender-email-to"><?php echo __('To Email address', 'mail-sender') ?></label>
                         </td>
                         <td>
                             <input id="wp-sender-email-to" name="email_to" size="60" type="email" value="<?php echo $default_email ?>" />
@@ -84,7 +84,7 @@ if ( !function_exists('wp_mail_sender_init') ) {
                     <tr>
                     <tr>
                         <td>
-                            <input class="button-primary" type="submit" value="<?php echo __('Send', 'wp-mail-sender') ?>">
+                            <input class="button-primary" type="submit" value="<?php echo __('Send', 'mail-sender') ?>">
                         </td>
                         <td></td>
                     </tr>
@@ -101,10 +101,10 @@ if ( !function_exists('wp_mail_sender_init') ) {
 
     function wp_mail_sender_init() {
         add_management_page(
-            __("Mail Sender test", 'wp-mail-sender'),
-            __("Mail Sender test", 'wp-mail-sender'),
+            __("Mail Sender test", 'mail-sender'),
+            __("Mail Sender test", 'mail-sender'),
             'update_core',
-            'wp-mail-sender',
+            'mail-sender',
             'wp_mail_sender_form'
         );
     }
