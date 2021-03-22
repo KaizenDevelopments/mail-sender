@@ -101,8 +101,8 @@ if ( !function_exists('wp_mail_sender_init') ) {
 
     function wp_mail_sender_init() {
         add_management_page(
-            __("Mail Sender test",'wp-mail-sender'),
-            __("Mail Sender test",'wp-mail-sender'),
+            __("Mail Sender test", 'wp-mail-sender'),
+            __("Mail Sender test", 'wp-mail-sender'),
             'update_core',
             'wp-mail-sender',
             'wp_mail_sender_form'
