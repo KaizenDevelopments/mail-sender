@@ -60,7 +60,7 @@ if ( !function_exists('wp_mail_sender_init') ) {
         if ( is_object($user) ) {
             $default_email = $user->user_email;
         }
-        $default_from = sprintf('noreply@%s', $_SERVER['HTTP_HOST']);
+        $default_from = sprintf('noreply@%s', str_replace('www.', '', $_SERVER['HTTP_HOST']));
     ?>
         <div class="wrap">
             <h2><?php echo __('Send a test email', 'wp-mail-sender') ?></h2>
