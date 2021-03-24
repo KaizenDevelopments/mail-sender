@@ -163,7 +163,7 @@ class MailSender {
 			esc_html__( 'Mail Sender test', 'mail-sender' ),
 			'update_core',
 			'mail-sender',
-			'wp_mail_sender_form'
+			array( $this, 'mail_sender_form' )
 		);
 	}
 }
