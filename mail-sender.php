@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'MailSender' ) ) {
-	require_once __DIR__ . 'class-mailsender.php';
+	require_once __DIR__ . '/class-mailsender.php';
 }
 
 /**
