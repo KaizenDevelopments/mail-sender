@@ -107,7 +107,7 @@ class MailSender {
 		<div class="wrap">
 			<h2><?php esc_html_e( 'Send a test email', 'mail-sender' ); ?></h2>
 			<form method="POST">
-				<input type="hidden" name="nonce" id="nonce" value="<?php wp_create_nonce( 'mail_sender_form' ); ?>">
+				<input type="hidden" name="nonce" id="nonce" value="<?php echo esc_attr( wp_create_nonce( 'mail_sender_form' ) ); ?>">
 				<table class="form-table">
 					<tr>
 						<td>
