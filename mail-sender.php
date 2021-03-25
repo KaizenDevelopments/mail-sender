@@ -31,14 +31,16 @@ if ( ! class_exists( 'MailSender' ) ) {
 	require_once __DIR__ . '/class-mailsender.php';
 }
 
-/**
- * Returns the main instance of MailSender to prevent the need to use globals.
- *
- * @since  1.0.0
- * @return MailSender
- */
-function mail_sender() {
-	return MailSender::instance();
-}
+if ( ! function_exists( 'mail_sender_plugin_initialization' ) ) {
+	/**
+	 * Returns the main instance of MailSender to prevent the need to use globals.
+	 *
+	 * @since  1.0.0
+	 * @return MailSender
+	 */
+	function mail_sender_plugin_initialization() {
+		return MailSender::instance();
+	}
 
-mail_sender();
+	mail_sender_plugin_initialization();
+}
