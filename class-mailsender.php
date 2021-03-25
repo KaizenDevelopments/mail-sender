@@ -51,7 +51,7 @@ class MailSender {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'plugins_loaded', array( $this, 'mail_sender_add_test_management_page' ) );
+		add_action( 'admin_menu', array( $this, 'mail_sender_add_test_management_page' ) );
 		add_action( 'phpmailer_init', array( $this, 'mail_sender_phpmailer_init' ) );
 	}
 
