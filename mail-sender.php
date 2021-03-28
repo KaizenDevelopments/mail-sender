@@ -3,7 +3,7 @@
  * Mail Sender
  *
  * Plugin Name: Mail Sender
- * Version:     1.0
+ * Version:     1.0.1
  * Plugin URI:  https://wordpress.org/plugins/mail-sender/
  * Description: Simple plugin to fix the mail sender enveloppe and use the From: address
  * Author:      Kaizen Developments
